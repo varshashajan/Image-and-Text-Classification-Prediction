@@ -29,9 +29,7 @@ print("Training Finished.")
 
 print(f'Test Accuracy: {round(acc * 100)}')
 
-with open("imdb_DNN.pkl",'wb') as file:
-    pickle.dump(model,file)
-
+model.save(r'D:\3rd sem\deeplearning\Deep Learning Prediction\dnn.keras')
 
 
 
