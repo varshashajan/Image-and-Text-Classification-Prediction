@@ -47,14 +47,11 @@ if option == "Text Classification":
                   with open('imdb_back_prop.pkl', 'rb') as file:
                         model = pickle.load(file)
             elif model == "DNN":
-                  with open('imdb_DNN.pkl', 'rb') as file:
-                        model = pickle.load(file) 
+                  model = tensorflow.keras.models.load_model('dnn.keras') 
             elif model == "RNN":
-                  with open('imdb_RNN.pkl', 'rb') as file:
-                        model = pickle.load(file)
+                  model = tensorflow.keras.models.load_model('rnn.keras')
             elif model == "LSTM":
-                  with open('imdb_lstm.pkl', 'rb') as file:
-                        model = pickle.load(file)
+                  model = tensorflow.keras.models.load_model('lstm.keras')
 
             if st.button("Classify"):
                   result = sentiment_classification(new_review_text, model)
